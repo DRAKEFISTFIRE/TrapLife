@@ -11,38 +11,56 @@
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background: linear-gradient(135deg, #000, #ff66cc);
-      background-size: 400% 400%;
-      animation: gradientAnimation 10s ease infinite;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
-    @keyframes gradientAnimation {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: rgba(0,0,0,0.4);
-      position: relative;
-      z-index: 10;
-    }
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background:
+    radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, rgba(0, 0, 0, 0.95) 70%),
+    linear-gradient(135deg, #000000, #ff66cc, #000000);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+   @keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+   header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4); 
+  border-bottom-left-radius: 12px; 
+  border-bottom-right-radius: 12px; 
+}
+
     .logo-img {
-      height: 100px;
-      width: auto;
-    }
+    height: 100px;
+    width: auto;
+    filter: drop-shadow(0 0 8px #ff66cc);
+  }
+
     nav a {
       color: #fff;
       text-decoration: none;
       margin: 0 15px;
       font-size: 18px;
       transition: color 0.3s;
+      text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc;
+
     }
     nav a:hover {
       color: #ff66cc;
@@ -57,6 +75,8 @@
       border: none;
       cursor: pointer;
       z-index: 20;
+      filter: drop-shadow(0 0 8px #ff66cc);
+
     }
     .menu-toggle .bar {
       width: 100%;
@@ -111,6 +131,8 @@
       margin-top: -95px;
       max-height: 400px;
       object-fit: cover;
+      filter: drop-shadow(0 0 8px #ff66cc);
+
     }
     /* Responsive */
     @media (max-width: 900px) {
@@ -159,6 +181,9 @@
         max-width: 100%;
         max-height: 300px;
       }
+    }
+      h1 {
+  text-shadow: 0 0 5px white, 0 0 10px white;
     }
   </style>
 </head>
