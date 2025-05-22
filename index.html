@@ -1,13 +1,153 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TrapLife - Servidor Rolplay</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>WaveLife Roleplay</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      position: relative;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #000000, #ff66cc);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff66cc;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff66cc;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      gap: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .text-content {
+      flex: 1 1 400px;
+      text-align: left;
+      max-width: 600px;
+    }
+
+    .text-content h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #ff66cc;
+    }
+
+    .text-content p {
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #ff66cc;
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e60099;
+    }
+
+    .hero-image {
+      flex: 1 1 400px;
+      max-width: 600px;
+      border-radius: 10px;
+      margin-top: -30px;
+    }
+
+    @media(max-width: 900px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .text-content {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">TRAPELIFE</div>
+    <nav>
+      <a href="#">STARTSEITE</a>
+      <a href="#">DISCORD</a>
+      <a href="#">REGELWERK</a>
+      <a href="#">FIVEM CONNECT</a>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+    <div class="text-content">
+      <h1>WAVELIFE</h1>
+      <p>Prepárate para un aterrizaje turbulento. Te espera una ciudad como nunca has visto. Sumérgete en Los Santos y crea tu personaje personalizado.</p>
+      <button class="btn">JUGAR AHORA</button>
+    </div>
+
+    <img src="images/imagen gta.png" alt="Personajes WaveLife" class="hero-image">
+  </section>
+
+</body>
 </html>
