@@ -37,19 +37,38 @@
       100% { background-position: 0% 50%; }
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: rgba(0, 0, 0, 0.4);
-      position: relative;
-      z-index: 1;
-    }
+   header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espacio entre imagen y texto */
+}
+
+.logo-img {
+  height: 100px; /* tamaño fijo o máximo para la imagen */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff66cc;
+}
 
     .logo {
       font-size: 28px;
       font-weight: bold;
+      width: 40px;
+      height: 50px;
       color: #ff66cc;
     }
 
@@ -113,7 +132,7 @@
       flex: 1 1 400px;
       max-width: 600px;
       border-radius: 10px;
-      margin-top: -30px;
+      margin-top: -95px;
     }
 
     @media(max-width: 900px) {
@@ -125,19 +144,23 @@
         text-align: center;
       }
     }
+    
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">TRAPLIFE</div>
-    <nav>
-      <a href="#">STARTSEITE</a>
-      <a href="#">DISCORD</a>
-      <a href="#">REGELWERK</a>
-      <a href="#">FIVEM CONNECT</a>
-    </nav>
-  </header>
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Logo" class="logo-img" />
+  </div>
+
+  <nav>
+    <a href="#">STARTSEITE</a>
+    <a href="https://discord.gg/NGeXUAkA">DISCORD</a>
+    <a href="#">REGELWERK</a>
+    <a href="#">FIVEM CONNECT</a>
+  </nav>
+</header>
 
   <section class="hero-section">
     <div class="text-content">
@@ -146,7 +169,7 @@
       <button class="btn">JUGAR AHORA</button>
     </div>
 
-    <!-- Imagen a la derecha -->
+    
     <img src="images/imagen gta.png" alt="Personajes WaveLife" class="hero-image">
   </section>
 
