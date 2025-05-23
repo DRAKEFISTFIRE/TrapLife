@@ -6,6 +6,7 @@
   <meta name="description" content="TrapLife RP: Vive una experiencia única de rol serio con scripts personalizados, mapeados únicos y vehículos exclusivos. ¡Únete ahora!" />
   <title>TrapLife RP - Rol serio en Los Santos</title>
   <link rel="icon" href="images/logo.png" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -228,21 +229,35 @@
     </nav>
   </header>
 
-  <section class="hero-section">
+  <section data-aos="fade-up "class="hero-section">
     <div class="text-content">
       <h1>TRAPLIFE RP</h1>
       <p>En TraplifeRP podrás encontrar <strong>scripts personalizados</strong>, <strong>mapeados únicos</strong>, <strong>vehículos exclusivos</strong> y mucho más. ¡Únete y vive una <strong>experiencia única del rol serio</strong>!</p>
-      <button class="btn">JUGAR AHORA</button>
     </div>
     <img src="images/coches.png" alt="Personajes TrapLife" class="hero-image" />
   </section>
 
-  <section>
-    <h2>¿Por qué elegirnos?</h2>
-    <p>Somos una comunidad dedicada al rol serio con atención constante al desarrollo del servidor, donde cada jugador importa. Nuestro staff activo garantiza una experiencia fluida y justa para todos.</p>
-  </section>
+ <section data-aos="fade-up" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; padding: 60px 20px; max-width: 1200px; margin: auto;">
+  
+  <!-- Imagen ilustrativa -->
+  <div style="flex: 1 1 400px; max-width: 500px;">
+    <img src="images/porque-elegirnos.jpg" alt="Staff y comunidad TrapLife RP" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(255, 102, 204, 0.3); object-fit: cover;">
+  </div>
+  
+  <!-- Texto -->
+  <div style="flex: 1 1 400px; max-width: 600px; text-align: left;">
+    <h2 style="color: #ff66cc; font-size: 36px; margin-bottom: 20px;">¿Por qué elegirnos?</h2>
+    <p style="font-size: 18px; line-height: 1.7; color: #fff; text-shadow: 0 0 8px rgba(255, 102, 204, 0.2);">
+      Somos una comunidad dedicada al <strong>rol serio</strong> con atención constante al desarrollo del servidor, donde cada jugador importa. 
+      Nuestro <strong>staff activo</strong> garantiza una experiencia fluida y justa para todos. Cumplimos con el rol y realizamos <strong>interacciones dinámicas</strong> con los jugadores, 
+      haciendo que se sientan realmente parte de la ciudad.
+    </p>
+  </div>
 
-  <section>
+</section>
+
+
+  <section data-aos="fade-up ">
     <h2>Galería de Imágenes</h2>
     <div class="gallery">
       <img src="images/gallery1.jpg" alt="Acción en TrapLife RP" />
@@ -251,13 +266,25 @@
     </div>
   </section>
 
-  <section>
-    <h2>Testimonios</h2>
-    <p><em>"TrapLife RP cambió mi forma de ver el rol. Aquí encontré una comunidad de verdad."</em> – AlexRP</p>
-    <p><em>"Eventos diarios, soporte activo y una ciudad viva. 10/10."</em> – CarlaGamer</p>
-  </section>
+ <section data-aos="fade-up" style="padding: 60px 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; margin: 40px auto; max-width: 1200px;">
+  <h2 style="color: #ff66cc; font-size: 36px; margin-bottom: 40px; text-align: center;">Testimonios</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    
+    <div data-aos="zoom-in" style="flex: 1 1 300px; background: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.2);">
+      <p style="font-size: 18px; font-style: italic; color: #fff;">"TrapLife RP cambió mi forma de ver el rol. Aquí encontré una comunidad de verdad."</p>
+      <p style="margin-top: 15px; font-weight: bold; color: #ff66cc;">– DRAKEFISTFIRE</p>
+    </div>
 
-  <section>
+    <div data-aos="zoom-in" data-aos-delay="150" style="flex: 1 1 300px; background: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.2);">
+      <p style="font-size: 18px; font-style: italic; color: #fff;">"Eventos diarios, soporte activo y una ciudad viva. 10/10."</p>
+      <p style="margin-top: 15px; font-weight: bold; color: #ff66cc;">– CarlaGamer</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section data-aos="fade-up ">
     <h2>Conéctate con Nosotros</h2>
     <p>Únete a nuestra comunidad en Discord para enterarte de eventos, cambios y más:</p>
     <a class="btn" href="https://discord.gg/NGeXUAkA" target="_blank">Entrar al Discord</a>
@@ -276,6 +303,11 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
   </script>
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
 
