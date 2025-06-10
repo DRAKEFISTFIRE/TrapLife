@@ -11,29 +11,29 @@
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
-    body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background:
+   body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background:
     radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, rgba(0, 0, 0, 0.95) 70%),
     linear-gradient(135deg, #000000, #ff66cc, #000000);
-    background-size: 600% 600%;
-    animation: gradientAnimation 15s ease infinite;
-    overflow-x: hidden;
-    min-height: 100vh;
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease-in-out infinite, darkenEffect 15s ease-in-out infinite;
+  background-blend-mode: multiply;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-   @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
+  @keyframes darkenEffect {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0.2); /* rosa claro predominante */
   }
   50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+    background-color: rgba(0, 0, 0, 0.9); /* fondo mucho más oscuro */
   }
 }
+
+  
 
    header {
   display: flex;
@@ -47,7 +47,6 @@
   border-bottom-left-radius: 12px; 
   border-bottom-right-radius: 12px; 
 }
-
     .logo-img {
       height: 100px;
       width: auto;
@@ -166,7 +165,7 @@
       nav {
         display: none;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0,0,0,0.9);
         position: absolute;
         top: 80px;
         right: 20px;
@@ -257,30 +256,52 @@
 
 </section>
 
-<!-- Galería de Imágenes con H1 y Sombras -->
-<section data-aos="fade-up" 
-         style="min-height: 100vh; 
-                display: flex; 
-                flex-direction: column; 
-                justify-content: center; 
-                align-items: center; 
-                padding: 60px 20px; 
-                max-width: 1200px; 
-                margin: 0 auto;">
-  <div class="text-content" style="text-align: center;">
-    <h1 style="color: #ff66cc; font-size: 48px; text-shadow: 0 0 5px white, 0 0 10px white; margin-bottom: 40px;">
-      OBSERVA NUESTRO SERVIDOR
-    </h1>
-    <div class="gallery" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: center;">
-      <img src="images/gallery1.jpg" alt="Acción en TrapLife RP"
-        style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
-      <img src="images/gallery2.jpg" alt="Vehículos exclusivos"
-        style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
-      <img src="images/gallery3.jpg" alt="Mapeado personalizado"
-        style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
+<!-- Galería Visual Mejorada -->
+<section style="min-height: 100vh; padding: 60px 20px; max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+  <h1 style="color: #ff66cc; font-size: 52px; text-shadow: 0 0 10px white, 0 0 20px white; margin-bottom: 50px; text-align: center;">
+    OBSERVA NUESTRO SERVIDOR
+  </h1>
+
+  <!-- Contenedor de la galería -->
+  <div style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
+    
+    <!-- Primera fila con 2 imágenes -->
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;">
+      <img src="images/ciudad.webp" alt="Acción en TrapLife RP" class="gallery-img" />
+      <img src="images/cars.webp" alt="Vehículos exclusivos" class="gallery-img" />
+    </div>
+
+    <!-- Segunda fila con 1 imagen centrada -->
+    <div>
+      <img src="images/casas.webp" alt="Mapeado personalizado" class="gallery-img" />
     </div>
   </div>
 </section>
+
+<!-- Estilos CSS embebidos -->
+<style>
+  .gallery-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(255, 102, 204, 0.5);
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(255, 102, 204, 0.6);
+  }
+
+  /* Responsive: en pantallas pequeñas, apila las imágenes */
+  @media (max-width: 768px) {
+    .gallery-img {
+      max-width: 90%;
+    }
+  }
+</style>
+
 <section data-aos="fade-up"
   style="
     padding: 60px 20px;
@@ -422,10 +443,17 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
   </script>
- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- Librería AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init();
+  AOS.init({
+    once: true,            // La animación ocurre solo una vez
+    duration: 1000,        // Duración de la animación en milisegundos
+    easing: 'ease-in-out', // Curva de animación
+    offset: 120            // Cuándo empieza (en px desde el viewport)
+  });
 </script>
+
 
 </body>
 </html>

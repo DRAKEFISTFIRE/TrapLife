@@ -190,6 +190,9 @@
   </style>
 </head>
 <body>
+
+
+
   <header>
     <div class="logo-container">
       <img src="images/logo.png" alt="Logo" class="logo-img" />
@@ -227,5 +230,27 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
   </script>
+    ...
+<audio id="audio" loop>
+  <source src="images/index.mp4" type="audio/mpeg" />
+</audio>
+
+<script>
+  const audio = document.getElementById('audio');
+
+  function playAudio() {
+    audio.play().catch(() => {});
+    window.removeEventListener('click', playAudio);
+    window.removeEventListener('touchstart', playAudio);
+  }
+
+  window.addEventListener('click', playAudio);
+  window.addEventListener('touchstart', playAudio);
+</script>
+
+
+</body>
+</html>
+
 </body>
 </html>
