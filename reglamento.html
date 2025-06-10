@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TrapLife RP: Vive una experiencia única de rol serio con scripts personalizados, mapeados únicos y vehículos exclusivos. ¡Únete ahora!">
+    <title>TrapLife RP - Reglamento Oficial</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background:
+                radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, rgba(0, 0, 0, 0.95) 70%),
+                linear-gradient(135deg, #000000, #ff66cc, #000000);
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4);
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .logo-img {
+            height: 100px;
+            width: auto;
+            filter: drop-shadow(0 0 8px #ff66cc);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+            text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc;
+        }
+
+        nav a:hover {
+            color: #ff66cc;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ff66cc;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff66cc;
+            text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff66cc;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Menu móvil */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            filter: drop-shadow(0 0 8px #ff66cc);
+        }
+
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: #ff66cc;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            padding: 80px 50px;
+            min-height: calc(100vh - 120px);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .text-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 30px;
+            color: #ff66cc;
+            text-shadow: 0 0 5px white, 0 0 10px white;
+            line-height: 1.2;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px #ff66cc;
+            }
+
+            to {
+                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #ff66cc;
+            }
+        }
+
+        .text-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px #ff66cc;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #ff66cc;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px #ff66cc);
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+        .btn:hover {
+            background: #e60099;
+            transform: translateY(-3px);
+            filter: drop-shadow(0 0 15px #ff66cc);
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+            max-width: 600px;
+            border-radius: 10px;
+            max-height: 400px;
+            margin-left: 50px;
+            object-fit: cover;
+            filter: drop-shadow(0 0 8px #ff66cc);
+        }
+
+        .hero-image-content {
+            text-align: center;
+            color: white;
+        }
+
+        .hero-image-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Secciones de reglas */
+        .rules-container {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .rule-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 102, 204, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(255, 102, 204, 0.3);
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 102, 204, 0.4);
+            border-color: rgba(255, 102, 204, 0.5);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .rule-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .rule-icon {
+            width: 60px;
+            height: 60px;
+            background: #ff66cc;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            filter: drop-shadow(0 0 8px #ff66cc);
+        }
+
+        .rule-title {
+            font-size: 2rem;
+            color: #ff66cc;
+            text-shadow: 0 0 5px white;
+            margin: 0;
+        }
+
+        .rule-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .rule-item:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateX(10px);
+        }
+
+        .rule-item-icon {
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .rule-item-text {
+            color: white;
+            text-shadow: 0 0 5px #ff66cc;
+            line-height: 1.5;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 102, 204, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 102, 204, 0.3);
+        }
+
+        .contact-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 0 0 5px #ff66cc;
+        }
+
+        .contact-text {
+            color: white;
+            text-shadow: 0 0 5px #ff66cc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.9);
+                border-radius: 8px;
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+                min-width: 200px;
+                box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4);
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero-section {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .text-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .text-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-image {
+                max-width: 300px;
+                height: 300px;
+            }
+
+            .rules-container {
+                padding: 40px 20px;
+            }
+
+            .rule-card {
+                padding: 30px 20px;
+            }
+
+            .rule-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .rule-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-section {
+                margin: 40px 20px;
+                padding: 30px 20px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Logo TrapLife RP" class="
+::contentReference[oaicite:0]{index=0}... <!-- Continuación del <body> -->
+
+    logo-img" />
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav id="main-menu">
+            <a href="index.html">ENTRADA</a>
+            <a href="inici.html">INICIO</a>
+            <a href="https://discord.gg/NGeXUAkA">DISCORD</a>
+            <a href="reglamento.html">REGLAMENTO</a>
+        </nav>
+    </header>
+    <!-- CONTINÚA DESDE <body> ... -->
+
+    <section class="hero-section">
+        <div class="text-content">
+            <h1>Reglamento Oficial de TrapLife RP</h1>
+            <p>
+                Bienvenido a TrapLife RP, un servidor de rol serio ambientado en Los Santos donde la
+                <strong>inmersión</strong>, el <strong>respeto</strong> y la <strong>coherencia</strong>
+                son nuestra prioridad.
+            </p>
+            <p>
+                Este reglamento existe para garantizar una experiencia de juego justa, realista y divertida
+                para todos los miembros de la comunidad. Al jugar en TrapLife, aceptas cumplir estas normas
+                y contribuir a mantener un ambiente de rol de alta calidad.
+            </p>
+            <a href="https://discord.gg/NGeXUAkA" class="btn" target="_blank">
+                Únete al Discord
+            </a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-content">
+                <img src="images/97c42869-c18f-44c0-9519-4728081bd7fb.png" alt="Personajes WaveLife" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <div class="rules-container">
+        <div class="rule-card fade-in-on-scroll">
+            <div class="rule-header">
+                <div class="rule-icon">🛡️</div>
+                <h2 class="rule-title">Normas Generales</h2>
+            </div>
+            <ul class="rule-list">
+                <li class="rule-item">
+                    <span class="rule-item-icon">✅</span>
+                    <span class="rule-item-text">Respeto entre jugadores en todo momento</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">❌</span>
+                    <span class="rule-item-text">Prohibido cualquier tipo de hack, bug o ventaja externa</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">❌</span>
+                    <span class="rule-item-text">No se permite metagaming, powergaming ni VDM</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">👤</span>
+                    <span class="rule-item-text">Edad mínima: 16 años (con madurez)</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🎙️</span>
+                    <span class="rule-item-text">Uso responsable del chat de voz, sin ruidos ni interrupciones</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rule-card fade-in-on-scroll">
+            <div class="rule-header">
+                <div class="rule-icon">🚗</div>
+                <h2 class="rule-title">Rol en Vehículos</h2>
+            </div>
+            <ul class="rule-list">
+                <li class="rule-item">
+                    <span class="rule-item-icon">🛣️</span>
+                    <span class="rule-item-text">Conducción coherente con tu personaje y la situación</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🚓</span>
+                    <span class="rule-item-text">Las persecuciones deben tener un motivo real</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">❌</span>
+                    <span class="rule-item-text">No se puede atropellar sin rol previo (VDM)</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🚔</span>
+                    <span class="rule-item-text">Respeta los controles y roles policiales</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rule-card fade-in-on-scroll">
+            <div class="rule-header">
+                <div class="rule-icon">⚔️</div>
+                <h2 class="rule-title">Conflicto y Crimen</h2>
+            </div>
+            <ul class="rule-list">
+                <li class="rule-item">
+                    <span class="rule-item-icon">💼</span>
+                    <span class="rule-item-text">Toda actividad ilegal requiere rol serio y justificación</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🧠</span>
+                    <span class="rule-item-text">Nada de matar por provocaciones verbales (No RDM)</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🔗</span>
+                    <span class="rule-item-text">Los secuestros deben tener historia previa</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🔥</span>
+                    <span class="rule-item-text">Las guerras entre bandas deben ser aprobadas por staff</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">💣</span>
+                    <span class="rule-item-text">Planea los delitos, no improvises sin lógica</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rule-card fade-in-on-scroll">
+            <div class="rule-header">
+                <div class="rule-icon">👤</div>
+                <h2 class="rule-title">Desarrollo de Personaje</h2>
+            </div>
+            <ul class="rule-list">
+                <li class="rule-item">
+                    <span class="rule-item-icon">🧬</span>
+                    <span class="rule-item-text">Crea una historia coherente para tu personaje</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🌀</span>
+                    <span class="rule-item-text">Cambios drásticos deben tener rol progresivo</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🧑‍🎤</span>
+                    <span class="rule-item-text">No uses nombres de famosos o irreales</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🗣️</span>
+                    <span class="rule-item-text">Habla y actúa como lo haría tu personaje</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rule-card fade-in-on-scroll">
+            <div class="rule-header">
+                <div class="rule-icon">⚖️</div>
+                <h2 class="rule-title">Staff y Sanciones</h2>
+            </div>
+            <ul class="rule-list">
+                <li class="rule-item">
+                    <span class="rule-item-icon">🛡️</span>
+                    <span class="rule-item-text">Respeta al staff siempre, están para ayudarte</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">📩</span>
+                    <span class="rule-item-text">Puedes apelar sanciones con pruebas en Discord</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">❌</span>
+                    <span class="rule-item-text">Reportes falsos o abusos serán sancionados</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">🧑‍⚖️</span>
+                    <span class="rule-item-text">El staff no entra al rol, solo modera</span>
+                </li>
+                <li class="rule-item">
+                    <span class="rule-item-icon">⏳</span>
+                    <span class="rule-item-text">Si eres sancionado, cumple el castigo y reflexiona</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact-section fade-in-on-scroll">
+            <h3 class="contact-title">
+                ¿Tienes dudas?
+            </h3>
+            <p class="contact-text">
+                Si tienes alguna pregunta sobre las reglas o necesitas aclarar algún punto,
+                no dudes en contactar con nuestro staff a través de Discord.
+            </p>
+            <a href="https://discord.gg/NGeXUAkA" class="btn" target="_blank">
+                Únete a Discord
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('main-menu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('show');
+            toggle.classList.toggle('active');
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in-on-scroll');
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize scroll animations
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('main-menu');
+            const toggle = document.querySelector('.menu-toggle');
+            const header = document.querySelector('header');
+
+            if (!header.contains(event.target) && menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                toggle.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

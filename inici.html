@@ -1,69 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="TrapLife RP: Vive una experiencia única de rol serio con scripts personalizados, mapeados únicos y vehículos exclusivos. ¡Únete ahora!" />
+  <meta name="description"
+    content="TrapLife RP: Vive una experiencia única de rol serio con scripts personalizados, mapeados únicos y vehículos exclusivos. ¡Únete ahora!" />
   <title>TrapLife RP - Rol serio en Los Santos</title>
   <link rel="icon" href="images/logo.png" type="image/png" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background:
-    radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, rgba(0, 0, 0, 0.95) 70%),
-    linear-gradient(135deg, #000000, #ff66cc, #000000);
-    background-size: 600% 600%;
-    animation: gradientAnimation 15s ease infinite;
-    overflow-x: hidden;
-    min-height: 100vh;
-}
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(circle at center, rgba(255, 102, 204, 0.15) 0%, rgba(0, 0, 0, 0.95) 70%),
+        linear-gradient(135deg, #000000, #ff66cc, #000000);
+      background-size: 600% 600%;
+      animation: gradientAnimation 15s ease infinite;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-   @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
 
-   header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: rgba(0, 0, 0, 0.4);
-  position: relative;
-  z-index: 10;
-  box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4); 
-  border-bottom-left-radius: 12px; 
-  border-bottom-right-radius: 12px; 
-}
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
 
     .logo-img {
       height: 100px;
       width: auto;
       filter: drop-shadow(0 0 8px #ff66cc);
     }
+
     nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-      transition: color 0.3s;
-      text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc;
-    }
-    nav a:hover {
-      color: #ff66cc;
-    }
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+            text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc;
+        }
+
+        nav a:hover {
+            color: #ff66cc;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ff66cc;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff66cc;
+            text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff66cc;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -75,18 +116,29 @@
       cursor: pointer;
       filter: drop-shadow(0 0 8px #ff66cc);
     }
+
     .menu-toggle .bar {
       width: 100%;
       height: 3px;
       background-color: #ff66cc;
       border-radius: 2px;
     }
+
     /* Animación de fondo */
     @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
+
     /* Sección principal */
     .hero-section {
       display: flex;
@@ -97,23 +149,27 @@
       gap: 50px;
       min-height: calc(100vh - 160px);
     }
+
     .text-content {
       flex: 1 1 400px;
       text-align: left;
       max-width: 600px;
     }
+
     .text-content h1 {
       font-size: 60px;
       margin-bottom: 20px;
       color: #ff66cc;
       text-shadow: 0 0 5px white, 0 0 10px white;
     }
+
     .text-content p {
       font-size: 22px;
       line-height: 1.5;
       margin-bottom: 30px;
       text-shadow: 0 0 5px #ff66cc, 0 0 15px #ff66cc;
     }
+
     .btn {
       padding: 15px 30px;
       background: #ff66cc;
@@ -125,9 +181,11 @@
       transition: background 0.3s;
       filter: drop-shadow(0 0 8px #ff66cc);
     }
+
     .btn:hover {
       background: #e60099;
     }
+
     .hero-image {
       flex: 1 1 400px;
       max-width: 600px;
@@ -136,21 +194,25 @@
       object-fit: cover;
       filter: drop-shadow(0 0 8px #ff66cc);
     }
+
     /* Secciones adicionales */
     section {
       padding: 50px 20px;
       text-align: center;
     }
+
     section h2 {
       font-size: 36px;
       margin-bottom: 20px;
       color: #ff66cc;
     }
+
     section p {
       font-size: 18px;
       line-height: 1.6;
       margin-bottom: 30px;
     }
+
     .gallery img {
       width: 100%;
       height: auto;
@@ -158,11 +220,13 @@
       margin: 10px;
       box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4);
     }
+
     /* Responsive */
     @media (max-width: 900px) {
       header {
         padding: 20px;
       }
+
       nav {
         display: none;
         flex-direction: column;
@@ -175,31 +239,39 @@
         min-width: 150px;
         z-index: 15;
       }
+
       nav.show {
         display: flex;
       }
+
       nav a {
         margin: 10px 0;
         font-size: 20px;
       }
+
       .menu-toggle {
         display: flex;
       }
+
       .hero-section {
         flex-direction: column;
         padding: 30px 20px;
         min-height: auto;
       }
+
       .text-content {
         text-align: center;
         max-width: 100%;
       }
+
       .text-content h1 {
         font-size: 48px;
       }
+
       .text-content p {
         font-size: 18px;
       }
+
       .hero-image {
         margin-top: 0;
         max-width: 100%;
@@ -208,6 +280,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo-container">
@@ -225,41 +298,45 @@
       <a href="index.html">ENTRADA</a>
       <a href="inici.html">INICIO</a>
       <a href="https://discord.gg/NGeXUAkA">DISCORD</a>
-      <a href="#">REGLAMENTO</a>
+      <a href="reglamento.html">REGLAMENTO</a>
     </nav>
   </header>
 
-  <section data-aos="fade-up "class="hero-section">
+  <section data-aos="fade-up " class="hero-section">
     <div class="text-content">
       <h1>TRAPLIFE RP</h1>
-      <p>En TraplifeRP podrás encontrar <strong>scripts personalizados</strong>, <strong>mapeados únicos</strong>, <strong>vehículos exclusivos</strong> y mucho más. ¡Únete y vive una <strong>experiencia única del rol serio</strong>!</p>
+      <p>En TraplifeRP podrás encontrar <strong>scripts personalizados</strong>, <strong>mapeados únicos</strong>,
+        <strong>vehículos exclusivos</strong> y mucho más. ¡Únete y vive una <strong>experiencia única del rol
+          serio</strong>!</p>
     </div>
     <img src="images/coches.png" alt="Personajes TrapLife" class="hero-image" />
   </section>
 
- <section data-aos="fade-up" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; padding: 60px 20px; max-width: 1200px; margin: auto;">
-  
-  <!-- Imagen ilustrativa -->
-  <div style="flex: 1 1 400px; max-width: 500px;">
-    <img src="Images/join.png" alt="Personajes TrapLife" class="hero-image" />
-  </div>
-  
-  <!-- Texto -->
-  <div style="flex: 1 1 400px; max-width: 600px; text-align: left;">
-    <div class="text-content">
-      <h1>PORQUE ELERGINOS</h1>
-      <p style="text-shadow: 0 0 5px #ff66cc, 0 0 15px #ff66cc;">
-        Somos una comunidad dedicada al <strong>rol serio</strong> con atención constante al desarrollo del servidor, donde cada jugador importa. 
-        Nuestro <strong>staff activo</strong> garantiza una experiencia fluida y justa para todos. Cumplimos con el rol y realizamos <strong>interacciones dinámicas</strong> con los jugadores, 
-        haciendo que se sientan realmente parte de la ciudad.
-    </p>
-  </div>
+  <section data-aos="fade-up"
+    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; padding: 60px 20px; max-width: 1200px; margin: auto;">
 
-</section>
+    <!-- Imagen ilustrativa -->
+    <div style="flex: 1 1 400px; max-width: 500px;">
+      <img src="Images/join.png" alt="Personajes TrapLife" class="hero-image" />
+    </div>
 
-<!-- Galería de Imágenes con H1 y Sombras -->
-<section data-aos="fade-up" 
-         style="min-height: 100vh; 
+    <!-- Texto -->
+    <div style="flex: 1 1 400px; max-width: 600px; text-align: left;">
+      <div class="text-content">
+        <h1>PORQUE ELERGINOS</h1>
+        <p style="text-shadow: 0 0 5px #ff66cc, 0 0 15px #ff66cc;">
+          Somos una comunidad dedicada al <strong>rol serio</strong> con atención constante al desarrollo del servidor,
+          donde cada jugador importa.
+          Nuestro <strong>staff activo</strong> garantiza una experiencia fluida y justa para todos. Cumplimos con el
+          rol y realizamos <strong>interacciones dinámicas</strong> con los jugadores,
+          haciendo que se sientan realmente parte de la ciudad.
+        </p>
+      </div>
+
+  </section>
+
+  <!-- Galería de Imágenes con H1 y Sombras -->
+  <section data-aos="fade-up" style="min-height: 100vh; 
                 display: flex; 
                 flex-direction: column; 
                 justify-content: center; 
@@ -267,22 +344,22 @@
                 padding: 60px 20px; 
                 max-width: 1200px; 
                 margin: 0 auto;">
-  <div class="text-content" style="text-align: center;">
-    <h1 style="color: #ff66cc; font-size: 48px; text-shadow: 0 0 5px white, 0 0 10px white; margin-bottom: 40px;">
-      OBSERVA NUESTRO SERVIDOR
-    </h1>
-    <div class="gallery" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: center;">
-      <img src="images/gallery1.jpg" alt="Acción en TrapLife RP"
-        style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
-      <img src="images/gallery2.jpg" alt="Vehículos exclusivos"
-        style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
-      <img src="images/gallery3.jpg" alt="Mapeado personalizado"
-        style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
+    <div class="text-content" style="text-align: center;">
+      <h1 style="color: #ff66cc; font-size: 48px; text-shadow: 0 0 5px white, 0 0 10px white; margin-bottom: 40px;">
+        OBSERVA NUESTRO SERVIDOR
+      </h1>
+      <div class="gallery"
+        style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: center;">
+        <img src="images/gallery1.jpg" alt="Acción en TrapLife RP"
+          style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
+        <img src="images/gallery2.jpg" alt="Vehículos exclusivos"
+          style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
+        <img src="images/gallery3.jpg" alt="Mapeado personalizado"
+          style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 102, 204, 0.3); object-fit: cover;" />
+      </div>
     </div>
-  </div>
-</section>
-<section data-aos="fade-up"
-  style="
+  </section>
+  <section data-aos="fade-up" style="
     padding: 60px 20px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
@@ -293,19 +370,19 @@
     flex-direction: column;
     align-items: center;
   ">
-  <div class="text-content" style="max-width: 700px; margin-bottom: 20px;">
-    <h1 style="
+    <div class="text-content" style="max-width: 700px; margin-bottom: 20px;">
+      <h1 style="
       color: #ff66cc;
       font-size: 48px;
       text-shadow: 0 0 5px white, 0 0 10px white;
       margin: 0 0 20px 0;
       text-align: center;
     ">
-      TESTIMONIOS
-    </h1>
-  </div>
+        TESTIMONIOS
+      </h1>
+    </div>
 
-  <div style="
+    <div style="
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -314,8 +391,7 @@
     width: 100%;
     transform: translateY(-30px);
   ">
-    <div data-aos="zoom-in"
-      style="
+      <div data-aos="zoom-in" style="
         flex: 1 1 300px;
         background: rgba(0, 0, 0, 0.6);
         padding: 30px;
@@ -324,15 +400,14 @@
         color: #fff;
         text-align: center;
       ">
-      <p style="font-size: 18px; font-style: italic; margin: 0 0 15px 0;">
-        "TrapLife RP cambió mi forma de ver el rol. Aquí encontré una comunidad de verdad."
-      </p>
-      <p style="font-weight: bold; color: #ff66cc; margin: 0;">
-        – DRAKEFISTFIRE
-      </p>
-    </div>
-    <div data-aos="zoom-in" data-aos-delay="150"
-      style="
+        <p style="font-size: 18px; font-style: italic; margin: 0 0 15px 0;">
+          "TrapLife RP cambió mi forma de ver el rol. Aquí encontré una comunidad de verdad."
+        </p>
+        <p style="font-weight: bold; color: #ff66cc; margin: 0;">
+          – DRAKEFISTFIRE
+        </p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="150" style="
         flex: 1 1 300px;
         background: rgba(0, 0, 0, 0.6);
         padding: 30px;
@@ -341,15 +416,15 @@
         color: #fff;
         text-align: center;
       ">
-      <p style="font-size: 18px; font-style: italic; margin: 0 0 15px 0;">
-        "Eventos diarios, soporte activo y una ciudad viva. 10/10."
-      </p>
-      <p style="font-weight: bold; color: #ff66cc; margin: 0;">
-        – CarlaGamer
-      </p>
+        <p style="font-size: 18px; font-style: italic; margin: 0 0 15px 0;">
+          "Eventos diarios, soporte activo y una ciudad viva. 10/10."
+        </p>
+        <p style="font-weight: bold; color: #ff66cc; margin: 0;">
+          – CarlaGamer
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -358,9 +433,8 @@
 
 
 
-<!-- Sección Discord con h1 -->
-<section data-aos="fade-up"
-  style="
+  <!-- Sección Discord con h1 -->
+  <section data-aos="fade-up" style="
     padding: 60px 20px; 
     background: rgba(255, 255, 255, 0.03); 
     border-radius: 12px; 
@@ -372,25 +446,24 @@
     justify-content: center;
     align-items: center;
   ">
-  <div class="text-content" style="max-width: 700px;">
-    <h1 style="
+    <div class="text-content" style="max-width: 700px;">
+      <h1 style="
       color: #ff66cc; 
       font-size: 48px; 
       text-shadow: 0 0 5px white, 0 0 10px white; 
       margin-bottom: 20px;
     ">
-      CONÉCTATE CON NOSOTROS
-    </h1>
-    <p style="
+        CONÉCTATE CON NOSOTROS
+      </h1>
+      <p style="
       font-size: 20px; 
       color: #fff; 
       margin-bottom: 30px; 
       text-shadow: 0 0 5px #ff66cc, 0 0 15px #ff66cc;
     ">
-      Únete a nuestra comunidad en Discord para enterarte de eventos, cambios y más:
-    </p>
-    <a href="https://discord.gg/NGeXUAkA" target="_blank" 
-       style="
+        Únete a nuestra comunidad en Discord para enterarte de eventos, cambios y más:
+      </p>
+      <a href="https://discord.gg/NGeXUAkA" target="_blank" style="
          padding: 15px 40px; 
          background: #ff66cc; 
          color: #fff; 
@@ -401,16 +474,16 @@
          transition: background 0.3s;
          display: inline-block;
        ">
-      Entrar al Discord
-    </a>
-  </div>
-</section>
+        Entrar al Discord
+      </a>
+    </div>
+  </section>
 
 
-<!-- Footer -->
-<footer style="text-align: center; padding: 20px; background: rgba(0,0,0,0.6); color: #ccc;">
-  &copy; 2025 TrapLife RP. Todos los derechos reservados.
-</footer>
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 20px; background: rgba(0,0,0,0.6); color: #ccc;">
+    &copy; 2025 TrapLife RP. Todos los derechos reservados.
+  </footer>
 
 
   <script>
@@ -422,12 +495,11 @@
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
   </script>
- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
-</html>
 
- 
+</html>
