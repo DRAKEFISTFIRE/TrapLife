@@ -10,6 +10,7 @@ Al principio me pidieron ayuda para hacer la web y me volvi el de los principale
 Agradecimientos especiales a AlekCaritgDev por su valiosa ayuda y colaboración en la creación y mejora de esta web. 
 
 
+![image](https://github.com/user-attachments/assets/46cb4764-a82d-4fe7-ae57-efd118e265ee)
 
 
 
